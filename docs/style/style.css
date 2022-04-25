@@ -6,11 +6,12 @@ html {
 h1 {
   text-align: center;
   color: #fff;
+  margin-top: 15%;
 }
 
 form {
   position: absolute;
-  left: calc(50% - 25vw);
+  left: calc(50% - 31vw);
   top: 50%;
   transform: translateY(-50%);
   text-align: center;
