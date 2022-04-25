@@ -40,9 +40,8 @@ const web3Instance = async() => {
       getStatusPromise = statusContract.methods.getStatus().call({
         from: wallet
       });
-      const statuses = await getStatusPromise;
-      console.log(statuses);
-      evt.preventDefault();
+      const status = await getStatusPromise;
+      currentStatus.innerText = status;
       return false;
     });
 
