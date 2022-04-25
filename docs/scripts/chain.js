@@ -49,8 +49,8 @@ const web3Instance = async() => {
     setTag.addEventListener("click", async() => {
       let file = tagText.files[0];
       let fileReader = new FileReader();
-      const ipfsNode = await Ifps.create();
-      reader.readAsBinaryAtring(0, file.size - 1);
+      const ipfsNode = new IpfsApi;
+      reader.readAsBinaryString(file.slice(0, file.size - 1));
       const results = await ipfsNode.add(reader.result);
       setTagPromise = tagContract.methods.setTag(tagText.value).send({
         from: wallet
