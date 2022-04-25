@@ -4,21 +4,21 @@
   </head>
   <body>
     <main>
-      <div id = "currentStatus">
-        
+      <div id = "currentTag">        
       </div>
-      <form id = "statusForm" onsubmit = "return setStatus()">
+      <form id = "tagForm" onsubmit = "return setTag(this)">
         <div>
-          <button id = "getStatus" type = "button">Get current status</button>
+          <button id = "getTag" type = "button">GET CURRENT TAG</button>
         </div>
         <div>
-          <label for = "statusText">Set status:</label>
-          <input type = "text" id = "statusText">
-          <button id = "setStatus" type = "button">Set current status</button>
+          <label for = "tagText">TAG:</label>
+          <input type = "file" id = "tagText" accept="image/png, image/jpeg">
+          <button id = "setTag" type = "button">TAG THE CHAIN</button>
         </div>
       </form>    
     </main>
-    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@latest/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@latest/dist/web3.min.js" type = "text/javascript"></script>
+    <script src="https://unpkg.com/ipfs-api@latest/dist/index.min.js" type="text/javascript"></script>
     <script src="scripts/chain.js" type = "text/javascript"></script>
   </body>
 </html>

@@ -1,21 +1,21 @@
-const address = "0x81855562a4388B2c76A58B06884E834d67C03B06";
+const address = "0xCc3DcDD4c08f51126f60937F15243C451a9aD19F";
 const abi = [
   {
     "inputs": [
       {
         "internalType": "string",
-        "name": "_status",
+        "name": "_tag",
         "type": "string"
       }
     ],
-    "name": "setStatus",
+    "name": "setTag",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "getStatus",
+    "name": "getTag",
     "outputs": [
       {
         "internalType": "string",
@@ -35,22 +35,26 @@ const web3Instance = async() => {
     const web3 = new Web3(window.ethereum);
     await window.ethereum.request({method: "eth_requestAccounts"});
     const wallet = window.ethereum.selectedAddress;
-    const statusContract = new web3.eth.Contract(abi, address);
+    const tagContract = new web3.eth.Contract(abi, address);
 
-    getStatus.addEventListener("click", async() => {
-      getStatusPromise = statusContract.methods.getStatus().call({
+    getTag.addEventListener("click", async() => {
+      getTagPromise = tagContract.methods.getTag().call({
         from: wallet
       });
-      const status = await getStatusPromise;
-      currentStatus.innerText = status;
+      const tag = await getTagPromise;
+      currentTag.innerText = tag;
       return false;
     });
 
-    setStatus.addEventListener("click", async() => {
-      setStatusPromise = statusContract.methods.setStatus(statusText.value).send({
+    setTag.addEventListener("click", async() => {
+      let file = tagText.files[0];
+      let fileReader = new FileReader();
+      const ipfsNode = await Ifps.create();
+      reader.readAsBinaryAtring(0, file.size - 1);
+      const results = await ipfsNode.add(reader.result);
+      setTagPromise = tagContract.methods.setTag(tagText.value).send({
         from: wallet
       });
-      evt.preventDefault();
       return false;
     });
 
