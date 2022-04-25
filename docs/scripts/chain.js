@@ -30,14 +30,30 @@ const abi = [
 
 const web3Instance = async() => {
   if (window.ethereum) {
+
     const web3 = new Web3(window.ethereum);
     await window.ethereum.request({method: "eth_requestAccounts"});
     const wallet = window.ethereum.selectedAddress;
     const statusContract = new web3.eth.Contract(abi, address);
-    getStatusPromise = statusContract.methods.getStatus().send({
-      from: wallet
+
+    getStatuses.addEventListener("click", () => {
+      getStatusPromise = statusContract.methods.getStatus().call({
+        from: wallet
+      });
+      const statuses = await getStatusPromise;
+      console.log(statuses);
+      evt.preventDefault();
+      return false;
     });
-    var statuses = await getStatusPromise;
-    console.log(statuses);
+
+    const setStatus = (data) => {
+      formData = new FormData(data);
+      setStatusPromise = statusContract.methods.setStatus(statusValue.value).send({
+        from: wallet
+      });
+      evt.preventDefault();
+      return false;
+    }
+
  }
 }
