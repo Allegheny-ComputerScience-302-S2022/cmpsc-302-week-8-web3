@@ -36,7 +36,7 @@ const web3Instance = async() => {
     const wallet = window.ethereum.selectedAddress;
     const statusContract = new web3.eth.Contract(abi, address);
 
-    getStatuses.addEventListener("click", async() => {
+    getStatus.addEventListener("click", async() => {
       getStatusPromise = statusContract.methods.getStatus().call({
         from: wallet
       });
