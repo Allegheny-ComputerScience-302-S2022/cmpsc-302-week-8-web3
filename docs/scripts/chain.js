@@ -31,9 +31,9 @@ const abi = [
 const web3Instance = async() => {
   if (window.ethereum) {
     const web3 = new Web3(window.ethereum);
-    await window.ethereum.enable();
+    await window.ethereum.send("eth_requestAccounts");
     const wallet = window.ethereum.selectedAddress;
-    const statusContract = web3.eth.Contract(abi, address);
+    const statusContract = new web3.eth.Contract(abi, address);
     contract.methods.getStatus().send({
       from: wallet
     });
