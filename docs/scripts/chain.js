@@ -46,8 +46,8 @@ const web3Instance = async() => {
       return false;
     });
 
-    setStatus.addEventListener("click", async(data) => {
-      setStatusPromise = statusContract.methods.setStatus(statusValue.value).send({
+    setStatus.addEventListener("click", async() => {
+      setStatusPromise = statusContract.methods.setStatus(statusText.value).send({
         from: wallet
       });
       evt.preventDefault();
