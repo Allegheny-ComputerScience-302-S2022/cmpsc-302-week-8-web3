@@ -34,7 +34,7 @@ const web3Instance = async() => {
     await window.ethereum.request({method: "eth_requestAccounts"});
     const wallet = window.ethereum.selectedAddress;
     const statusContract = new web3.eth.Contract(abi, address);
-    contract.methods.getStatus().send({
+    statusContract.methods.getStatus().send({
       from: wallet
     });
  }
