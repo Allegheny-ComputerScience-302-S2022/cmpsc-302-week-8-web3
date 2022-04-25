@@ -39,5 +39,6 @@ const web3Instance = async() => {
     });
     var statuses = await getStatusPromise;
     console.log(statuses);
+    console.log(web3.eth.getBlock(0));
  }
 }
