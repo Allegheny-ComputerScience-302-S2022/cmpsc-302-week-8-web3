@@ -52,7 +52,7 @@ const web3Instance = async() => {
       });
       evt.preventDefault();
       return false;
-    }
+    });
 
  }
 }
