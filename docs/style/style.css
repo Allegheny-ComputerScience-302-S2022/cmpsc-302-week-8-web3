@@ -10,11 +10,7 @@ h1 {
 
 form {
   position: absolute;
-<<<<<<< HEAD
-  left: 25vw;
-=======
   left: calc(50% - 25vw);
->>>>>>> 8663e95eca549f00076bae4494233d8666e4d817
   top: 50%;
   transform: translateY(-50%);
   text-align: center;
