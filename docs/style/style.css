@@ -1,9 +1,17 @@
+html {
+  background: #222;
+  font-family: lores-21-serif, sans-serif;
+}
+
 form {
   position: absolute;
   left: calc(50% - 25vw);
   top: 50%;
   transform: translateY(-50%);
-  width: 50vw;
+  text-align: center;
+  background: #FFF;
+  border-radius: 10px;
+  padding: 5%;
 }
 
 form > div {
@@ -14,4 +22,8 @@ button {
   border-radius: 10px;
   background: #222;
   color: #FFF;
+}
+
+#currentStatus {
+  font-size: 2rem;
 }

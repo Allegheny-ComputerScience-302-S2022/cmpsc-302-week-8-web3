@@ -50,9 +50,10 @@ const web3Instance = async() => {
       setStatusPromise = statusContract.methods.setStatus(statusText.value).send({
         from: wallet
       });
-      evt.preventDefault();
       return false;
     });
 
  }
 }
+
+web3Instance();
