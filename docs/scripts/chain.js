@@ -37,6 +37,8 @@ const web3Instance = async() => {
     const wallet = window.ethereum.selectedAddress;
     const tagContract = new web3.eth.Contract(abi, address);
 
+    const ipfs = await Ipfs.create();
+
     getTag.addEventListener("click", async() => {
       getTagPromise = tagContract.methods.getTag().call({
         from: wallet
@@ -48,10 +50,8 @@ const web3Instance = async() => {
 
     setTag.addEventListener("click", async() => {
       let file = tagText.files[0];
-      let fileReader = new FileReader();
-      const ipfsNode = new IpfsApi;
-      reader.readAsBinaryString(file.slice(0, file.size - 1));
-      const results = await ipfsNode.add(reader.result);
+      const result = await ipfs.add(file);
+      console.log(result);
       setTagPromise = tagContract.methods.setTag(tagText.value).send({
         from: wallet
       });
