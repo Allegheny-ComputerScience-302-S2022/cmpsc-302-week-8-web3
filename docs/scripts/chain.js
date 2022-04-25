@@ -29,6 +29,7 @@ const abi = [
 ];
 
 const web3Instance = async() => {
+
   if (window.ethereum) {
 
     const web3 = new Web3(window.ethereum);
@@ -45,8 +46,7 @@ const web3Instance = async() => {
       return false;
     });
 
-    const setStatus = (data) => {
-      formData = new FormData(data);
+    setStatus.addEventListener("click", async(data) => {
       setStatusPromise = statusContract.methods.setStatus(statusValue.value).send({
         from: wallet
       });
