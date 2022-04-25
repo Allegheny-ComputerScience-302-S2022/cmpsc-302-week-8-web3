@@ -52,7 +52,7 @@ const web3Instance = async() => {
       });
       return false;
     });
-
+    getStatus.click();
  }
 }
 
