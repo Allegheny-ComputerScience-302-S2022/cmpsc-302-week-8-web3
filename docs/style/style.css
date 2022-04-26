@@ -10,12 +10,13 @@ h1 {
 
 form {
   position: absolute;
-  left: calc(50% - 25vw);
+  left: calc(50% - 30vw);
   top: 50%;
   transform: translateY(-50%);
   text-align: center;
   background: #FFF;
   border-radius: 10px;
+  width: 50vw;
   padding: 5%;
 }
 
@@ -23,10 +24,23 @@ form > div {
   display: inline-block;
 }
 
+label {
+  font-size: 1.5rem;
+}
+
 button {
   border-radius: 10px;
   background: #222;
   color: #FFF;
+  padding: 5%;
+  font-size: 2rem;
+  font-family: lores-21-serif, sans-serif;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover{
+  background: red;
 }
 
 #tag {
@@ -42,6 +56,16 @@ button {
   font-size: 2rem;
   display: block;
   margin-bottom: 1%;
+}
+
+#statusText {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px #222 dashed;
+  margin-bottom: 2%;
+  font-size: 2rem;
+  font-family: lores-21-serif, sans-serif;
+  
 }
 
 .network-id {
