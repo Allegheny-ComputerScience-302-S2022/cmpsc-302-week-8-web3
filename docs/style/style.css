@@ -29,8 +29,21 @@ button {
   color: #FFF;
 }
 
+#tag {
+  top: 0;
+  right: 0;
+  position: fixed;
+  font-size: 1rem;
+  color: white;
+  padding: 1%;
+}
+
 #currentStatus {
   font-size: 2rem;
   display: block;
   margin-bottom: 1%;
+}
+
+.network-id {
+  color: yellow;
 }
