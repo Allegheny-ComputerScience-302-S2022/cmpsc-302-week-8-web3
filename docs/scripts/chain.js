@@ -70,6 +70,7 @@ const web3Instance = async() => {
       statusText.value = "";
       return false;
     });
+    getStatus.click();
     setInterval(() => {
       // Auto-click the status every ten seconds
       getStatus.click();
