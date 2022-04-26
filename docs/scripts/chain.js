@@ -70,8 +70,10 @@ const web3Instance = async() => {
       statusText.value = "";
       return false;
     });
-    // Auto-click the status when the page loads
-    getStatus.click();
+    setInterval(() => {
+      // Auto-click the status every ten seconds
+      getStatus.click();
+    }, 10000);
  }
 }
 // Start the instance
