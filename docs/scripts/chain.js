@@ -45,7 +45,7 @@ const web3Instance = async() => {
       });
       let status = await getStatusPromise;
       status = status.replace(re, "<a href = '$1' target = '_blank'>$1</a>");
-      currentStatus.innerText = status;
+      currentStatus.innerHTML = status;
       return false;
     });
 
