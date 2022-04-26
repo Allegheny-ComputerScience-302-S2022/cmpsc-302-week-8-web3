@@ -36,12 +36,15 @@ const web3Instance = async() => {
     await window.ethereum.request({method: "eth_requestAccounts"});
     const wallet = window.ethereum.selectedAddress;
     const statusContract = new web3.eth.Contract(abi, address);
+    const re = /((http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-]))/ig;
+
 
     getStatus.addEventListener("click", async() => {
       getStatusPromise = statusContract.methods.getStatus().call({
         from: wallet
       });
-      const status = await getStatusPromise;
+      let status = await getStatusPromise;
+      status = status.replace(re, "<a href = '$1' target = '_blank'>$1</a>");
       currentStatus.innerText = status;
       return false;
     });
