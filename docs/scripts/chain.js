@@ -67,10 +67,14 @@ const web3Instance = async() => {
       setStatusPromise = statusContract.methods.setStatus(statusText.value).send({
         from: wallet
       });
+      statusText.value = "";
       return false;
     });
-    // Auto-click the status when the page loads
     getStatus.click();
+    setInterval(() => {
+      // Auto-click the status every ten seconds
+      getStatus.click();
+    }, 10000);
  }
 }
 // Start the instance
