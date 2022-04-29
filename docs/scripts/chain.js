@@ -59,7 +59,7 @@ const web3Instance = async() => {
       // Post as innerHTML to currentStatus element
       currentStatus.innerHTML = status;
       if(!currentStatus.innerHTML.includes("youtube") || 
-         !currentStatus.innerHTML.includes("spotify") ){
+         !currentStatus.innerHTML.includes("scdn") ){
         setInterval(() => {
           // Auto-click the status every ten seconds
           getStatus.click();
