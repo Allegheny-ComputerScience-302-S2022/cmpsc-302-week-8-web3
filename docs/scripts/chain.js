@@ -71,10 +71,12 @@ const web3Instance = async() => {
       return false;
     });
     getStatus.click();
-    setInterval(() => {
-      // Auto-click the status every ten seconds
-      getStatus.click();
-    }, 10000);
+    if(!currentStatus.innerHTML.includes("youtube")){
+      setInterval(() => {
+        // Auto-click the status every ten seconds
+        getStatus.click();
+      }, 10000);
+    }
  }
 }
 // Start the instance
