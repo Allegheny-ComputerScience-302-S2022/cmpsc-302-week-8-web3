@@ -58,6 +58,12 @@ const web3Instance = async() => {
       status = status.replace(re, "<a href = '$1' target = '_blank'>$1</a>");
       // Post as innerHTML to currentStatus element
       currentStatus.innerHTML = status;
+      if(!currentStatus.innerHTML.includes("youtube")){
+        setInterval(() => {
+          // Auto-click the status every ten seconds
+          getStatus.click();
+        }, 10000);
+      }
       return false;
     });
 
@@ -71,12 +77,6 @@ const web3Instance = async() => {
       return false;
     });
     getStatus.click();
-    if(!currentStatus.innerHTML.includes("youtube")){
-      setInterval(() => {
-        // Auto-click the status every ten seconds
-        getStatus.click();
-      }, 10000);
-    }
  }
 }
 // Start the instance
