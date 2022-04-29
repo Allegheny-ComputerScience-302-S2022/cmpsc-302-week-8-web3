@@ -58,8 +58,8 @@ const web3Instance = async() => {
       status = status.replace(re, "<a href = '$1' target = '_blank'>$1</a>");
       // Post as innerHTML to currentStatus element
       currentStatus.innerHTML = status;
-      if(!currentStatus.innerHTML.includes("youtube") && 
-         !currentStatus.innerHTML.includes("scdn") ){
+      if(!currentStatus.innerHTML.includes("youtube") &&
+         !currentStatus.innerHTML.includes("spotify") ){
         setInterval(() => {
           // Auto-click the status every ten seconds
           getStatus.click();
